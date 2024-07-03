@@ -1,0 +1,38 @@
+img {
+    height:400px;
+    width: 400px;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 50px;
+    }
+    img {
+        height: 400px;
+        width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+    img {
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 425px) {
+    h1 {
+        font-size: 20px;
+    }
+    img {
+        height: 200px;
+        width: 200px;
+    }
+}

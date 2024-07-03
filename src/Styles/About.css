@@ -1,0 +1,76 @@
+@keyframes spin {
+    0%{
+    transform: rotate(0deg);
+    }
+    100%{
+    transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    animation: spin 1.5s linear infinite;
+}
+
+
+@media (width  <= 768px) {
+   img{
+     height: 100px;
+    width: 100px;
+   }
+}
+
+@keyframes glow {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 0.9; 
+  }
+  
+}
+
+.underline-text {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; 
+  width: 100%;
+  height: 4px; 
+  background-color: #007BFF;
+  animation: glow 1.5s ease; 
+}
+
+
+
+/* About.css */
+
+@keyframes progressAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-width); 
+  }
+}
+
+.progress-bar {
+  width: 0%;
+  background-color: #007bff;
+}
+
+.start-animation {
+  animation: progressAnimation 2s ease forwards;
+}
+
+
+
+.about-bg{
+    background-color: #B8DDF1;
+}
