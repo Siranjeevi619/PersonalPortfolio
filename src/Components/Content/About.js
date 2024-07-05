@@ -32,10 +32,12 @@ function About() {
   }, []);
 
   return (
-    <div className="navbar-light about-bg">
+    <div className="navbar-light about-bg" id="About">
       <div className="py-5">
         <div className="container">
-          <h1 className="h1 underline-text">About Myself</h1>
+          <h1 className="h1 underline-text">
+            About Myself <i class="bi bi-link-45deg nav-icon"></i>
+          </h1>
           <div className="row">
             <div className="col-12 col-md-9 order-2 order-md-1" id="info">
               <p className="mt-2">

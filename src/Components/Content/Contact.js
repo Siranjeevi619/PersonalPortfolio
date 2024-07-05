@@ -3,6 +3,8 @@ import emailjs from "emailjs-com";
 import toast, { Toaster } from "react-hot-toast";
 import "../../Styles/style.css";
 import "../../Styles/Contact.css";
+import { Link } from "react-scroll";
+import ContactImage from "../../assets/Icons/undraw_join_re_w1lh.svg";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -43,20 +45,37 @@ function Contact() {
   };
 
   return (
-    <div className="py-4">
+    <div className="py-4" id="Contact">
       <div className="container">
         <Toaster position="top-center" reverseOrder={false} />
-        <h3 className="h2 text-center">Contact</h3>
+        <h3 className="h1 text-center">
+          Contact
+          <Link to="Contact">
+            <i class="bi bi-link-45deg nav-icon"></i>
+          </Link>
+        </h3>
         <div className="row">
           <div className="col-12 col-md-6">
-            <div className="h2 mt-4">Look here</div>
-            <div className="">
-              I am excited to announce that I am now available for freelance
-              work. With extensive experience as a frontend developer, I deliver
-              high-quality, tailored solutions. If you have projects that could
-              benefit from my skills, please contact me. I look forward to
-              collaborating with you.
-              <br /> Best regards, <span className="h4 ">Siranjeevi</span>.
+            <div className="container-expand-lg">
+              <div className="row">
+                <div className="col-12">
+                  <div className="h2 mt-4">Look here</div>
+                  <div className="text-start">
+                    I am excited to announce that I am now available for
+                    freelance work. With extensive experience as a frontend
+                    developer, I deliver high-quality, tailored solutions. If
+                    you have projects that could benefit from my skills, please
+                    contact me. I look forward to collaborating with you.
+                    <br /> Best regards, <span className="h4 ">Siranjeevi</span>
+                    .
+                  </div>
+                </div>
+                <div className="col-12 ">
+                  <div className="d-flex justify-content-center align-items-center">
+                    <img src={ContactImage} className='img-fluid w-50 h-50' />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="col-12 col-md-6">
@@ -111,7 +130,7 @@ function Contact() {
                       Send a message
                     </label>
                   </div>
-                  <button className="btn btn-primary mt-2">Send Message</button>
+                  <button className="btn btn-primary mt-2">Send <i className="bi bi-send-fill"></i></button>
                 </div>
               </div>
             </form>

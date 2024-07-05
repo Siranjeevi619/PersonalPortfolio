@@ -2,7 +2,7 @@ import React from "react";
 import Typed from "typed.js";
 import "../../Styles/Home.css";
 import { useEffect } from "react";
-import DeveloperLogo from "../../assets/Images/stevePhoto.jpg";
+import DeveloperLogo from "../../assets/Images/1713845068875.jpg";
 import Resume from "../../assets/docs/Siranjeevi-resume.pdf";
 import { Link } from "react-scroll";
 import About from "./About";
@@ -11,8 +11,9 @@ function Home() {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Frontend Developer", "Frontend Designer"],
+      strings: ["Frontend Designer", "Frontend Developer", "Web Developer"],
       typeSpeed: 150,
+      loopCount: Infinity,
     });
 
     return () => {
@@ -24,7 +25,7 @@ function Home() {
       <div className="container">
         <div className="row py-1 py-md-5">
           <div className="col-12 col-md-6">
-            <div className="mt-md-5 mt-1 align-items-center d-flex justify-content-center">
+            <div className="mt-md-5  align-items-center d-flex justify-content-center">
               <img
                 src={DeveloperLogo}
                 className="img-fluid rounded-circle border-primary developer-logo"
@@ -32,7 +33,7 @@ function Home() {
             </div>
           </div>
           <div className="col-12 col-md-6">
-            <div className="mt-5">
+            <div className="mt-md-5 mt-2">
               <h1 className="text-center">
                 Siranjeevi Selvam <br />
                 <span className="text-break mt-md-4"></span>

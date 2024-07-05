@@ -10,6 +10,7 @@ import ErrorDisplay from "./Components/Content/Helpers/ErrorDisplay";
 import Skill from "./Components/Content/Skill";
 import SkillCard from "./Components/Content/Helpers/SkillCard";
 import Contact from "./Components/Content/Contact";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -19,10 +20,7 @@ function App() {
       <Skill />
       <Projects />
       <Contact />
-      {/* <ProjectCardPlaceHolder /> */}
-      {/* <ErrorDisplay /> */}
-
-      {/* <SkillCard /> */}
+      <Footer />
     </>
   );
 }

@@ -11,7 +11,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
         <a className="navbar-brand d-flex align-items-center">
-          <h3 className="fw-4 mb-0">Siranjeevi</h3>
+          <h3 className="fw-4 mb-0">Siranjeevi <span className="text-muted">Selvam</span></h3>
          
         </a>
         <button
@@ -33,22 +33,22 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item h6">
-              <Link to="/About" className="nav-link" aria-current="page">
+              <Link to="About" className="nav-link" aria-current="page">
                 About
               </Link>
             </li>
             <li className="nav-item h6">
-              <Link to="/Projects" className="nav-link" aria-current="page">
+              <Link to="Projects" className="nav-link" aria-current="page">
                 Projects
               </Link>
             </li>
             <li className="nav-item h6">
-              <Link to="/Skills" className="nav-link" aria-current="page">
+              <Link to="Skills" className="nav-link" aria-current="page">
                 Skills
               </Link>
             </li>
             <li className="nav-item h6">
-              <Link to="/Contact" className="nav-link" aria-current="page">
+              <Link to="Contact"  className="nav-link" aria-current="page">
                 Contact
               </Link>
             </li>

@@ -7,6 +7,7 @@ import ToDoAppListImage from "../../assets/Images/TodoApp.png";
 import TicTacToeImage from "../../assets/Images/TicTacToe.png";
 import StarCafeImage from "../../assets/Images/StarCafe.png";
 import "../../Styles/Project.css";
+import { Link } from "react-scroll";
 const projectData = [
   {
     name: "cloudatom",
@@ -68,11 +69,22 @@ const projectData = [
 const Projects = () => {
   return (
     <>
-      <div className="bg-light ">
+      <div className="bg-light " id="Projects">
         <div className="py-5">
           <div className="container">
-            <h1 className="text-center h1 py-3">Projects</h1>
+            <h1 className="text-center h1 py-3">
+              Projects{" "}
+              <Link to="Projects">
+                <i class="bi bi-link-45deg nav-icon"></i>
+              </Link>
+            </h1>
             <div className="row">
+              <p className="text-md-center text-start pb-2">
+                During my learning journey as a frontend developer, I developed
+                a project that reinforced my theoretical knowledge and enhanced
+                my problem-solving and development skills, providing valuable
+                insights into the complete development lifecycle.
+              </p>
               {projectData.map((project, index) => (
                 <ProjectCard key={index} {...project} />
               ))}

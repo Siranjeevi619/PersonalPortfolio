@@ -26,13 +26,13 @@ function ProjectCard({
           ></Skeleton>
         )}
         <div className="card-body d-flex flex-column">
-          <h5 className="card-title">
+          <h3 className="card-title fs-2">
             {name ? name : <Skeleton width="60%" />}
-          </h5>
-          <h6 className="card-subtitle mb-2 text-muted">
+          </h3>
+          <h4 className="card-subtitle mb-2 text-muted">
             {subName ? subName : <Skeleton width="60%" />}
-          </h6>
-          <p className="card-text flex-grow-1">
+          </h4>
+          <p className="card-text ">
             {description ? (
               description
             ) : (
@@ -41,11 +41,13 @@ function ProjectCard({
                 <Skeleton width="70%" />
               </>
             )}
-            <br /> Role:
-            <span className="text-primary">
+          </p>
+          <p className="h6">
+            <span className=" special-text " aria-label="Close">
               {role ? role : <Skeleton width="40%" />}
             </span>
           </p>
+
           <div className="mt-auto">
             {repository ? (
               repository !== "#" ? (
@@ -54,10 +56,7 @@ function ProjectCard({
                 </a>
               ) : (
                 <>
-                  <a
-                    href={LinkedIn}
-                    className="btn btn-primary "
-                  >
+                  <a href={LinkedIn} className="btn btn-primary ">
                     LinkedIn <i className="bi bi-linkedin "></i>
                   </a>
                 </>
