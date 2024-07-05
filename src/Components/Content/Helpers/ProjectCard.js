@@ -5,12 +5,12 @@ import "react-loading-skeleton/dist/skeleton.css";
 import ErrorDisplay from "./ErrorDisplay";
 
 function ProjectCard({
-  name,
-  subName,
-  description,
-  role,
-  imageSrc,
-  repository,
+  name = null,
+  subName = null,
+  description = null,
+  role = null,
+  imageSrc = null,
+  repository = null,
   Message,
   LinkedIn,
 }) {
@@ -55,8 +55,8 @@ function ProjectCard({
               ) : (
                 <>
                   <a
-                    href={repository}
-                    className="btn btn-primary icon-link-hover"
+                    href={LinkedIn}
+                    className="btn btn-primary "
                   >
                     LinkedIn <i className="bi bi-linkedin "></i>
                   </a>

@@ -6,6 +6,15 @@
 
 .skill-card:hover {
   transform: scale(1.05);
+  border: 1px solid #00c8ff;
+  box-shadow: 0 0 10px #00c8ff, 
+                0 0 20px #00c8ff,
+                0 0 30px #00c8ff,
+                0 0 40px #00c8ff, 
+                0 0 70px #00c8ff,
+                0 0 80px #00c8ff,
+                0 0 100px #00c8ff;
+                 border-radius: 10px;
 }
 
 

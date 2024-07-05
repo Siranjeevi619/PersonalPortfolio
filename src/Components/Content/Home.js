@@ -40,12 +40,12 @@ function Home() {
               </h1>
               <p className=" text-lighter text-break">
                 Hello! I'm Siranjeevi, a frontend developer passionate about
-                creating user-friendly web experiences. With skills in
-                <span className="special-text"> HTML</span>, CSS, JavaScript
-                (React), Bootstrap, Material UI and a solid background in C,
-                Java, and Python, I enjoy blending design with functionality to
-                build responsive and intuitive applications. Let's collaborate
-                on crafting engaging digital solutions that make an impact.
+                creating user-friendly web experiences. With skills in HTML,
+                CSS, JavaScript (React), Bootstrap, Material UI and a solid
+                background in C, Java, and Python, I enjoy blending design with
+                functionality to build responsive and intuitive applications.
+                Let's collaborate on crafting engaging digital solutions that
+                make an impact.
               </p>
               <div className="d-flex align-items-center justify-content-md-start justify-content-evenly">
                 <a href={Resume}>

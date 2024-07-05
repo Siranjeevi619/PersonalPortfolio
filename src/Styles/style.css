@@ -12,3 +12,12 @@
 .color-palette{
    color: #00C9FF;
 }
+
+.special-text{
+   color:black;
+   background-color: #00c8ff5e;
+   border-radius: 8px;
+   margin:6px;
+   border: 1px solid #00C9FF;
+   text-align: center;
+}

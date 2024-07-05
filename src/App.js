@@ -9,6 +9,7 @@ import ProjectCardPlaceHolder from "./Components/Content/Helpers/ProjectCardPlac
 import ErrorDisplay from "./Components/Content/Helpers/ErrorDisplay";
 import Skill from "./Components/Content/Skill";
 import SkillCard from "./Components/Content/Helpers/SkillCard";
+import Contact from "./Components/Content/Contact";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <Home />
       <Skill />
       <Projects />
-      <Projects />
+      <Contact />
       {/* <ProjectCardPlaceHolder /> */}
       {/* <ErrorDisplay /> */}
 
