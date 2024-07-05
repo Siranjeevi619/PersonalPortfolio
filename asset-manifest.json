@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/PersonalPortfolio/static/css/main.c84fa983.css",
+    "main.js": "/PersonalPortfolio/static/js/main.ef1f1312.js",
+    "static/js/453.c581dcb3.chunk.js": "/PersonalPortfolio/static/js/453.c581dcb3.chunk.js",
+    "static/media/StarCafe.png": "/PersonalPortfolio/static/media/StarCafe.91ea1c1e9c8128b10ef1.png",
+    "static/media/ExitSurvey.png": "/PersonalPortfolio/static/media/ExitSurvey.b943bd1587336eb3fb2b.png",
+    "static/media/LearnHub.png": "/PersonalPortfolio/static/media/LearnHub.ed2dfb361126ce752b12.png",
+    "static/media/TodoApp.png": "/PersonalPortfolio/static/media/TodoApp.b0bf8299c3fa9523cc73.png",
+    "static/media/Cloudatom.jpg": "/PersonalPortfolio/static/media/Cloudatom.f2a8f56cd81ebebdb9d3.jpg",
+    "static/media/Siranjeevi-resume.pdf": "/PersonalPortfolio/static/media/Siranjeevi-resume.af86c582729dabb28b0f.pdf",
+    "static/media/1713845068875.jpg": "/PersonalPortfolio/static/media/1713845068875.6635264c41bbe98c898f.jpg",
+    "static/media/TicTacToe.png": "/PersonalPortfolio/static/media/TicTacToe.e7008a634b701361443b.png",
+    "static/media/icons8-mongodb-480.png": "/PersonalPortfolio/static/media/icons8-mongodb-480.4d1763a20af23f3dbc1d.png",
+    "static/media/icons8-java-480.png": "/PersonalPortfolio/static/media/icons8-java-480.e238a2c40e6eaec570bc.png",
+    "static/media/icons8-c-240.png": "/PersonalPortfolio/static/media/icons8-c-240.03589f45a07032f0be45.png",
+    "static/media/icons8-html-logo-480.png": "/PersonalPortfolio/static/media/icons8-html-logo-480.be50d4568ab0cb01edb8.png",
+    "static/media/icons8-python-480.png": "/PersonalPortfolio/static/media/icons8-python-480.9c47735ea0c4a2d20349.png",
+    "static/media/icons8-bootstrap-480.png": "/PersonalPortfolio/static/media/icons8-bootstrap-480.5f221ec70518e4c64eaa.png",
+    "static/media/undraw_join_re_w1lh.svg": "/PersonalPortfolio/static/media/undraw_join_re_w1lh.6254c972f0ba516dc0fe6189c5fcb4ea.svg",
+    "index.html": "/PersonalPortfolio/index.html",
+    "main.c84fa983.css.map": "/PersonalPortfolio/static/css/main.c84fa983.css.map",
+    "main.ef1f1312.js.map": "/PersonalPortfolio/static/js/main.ef1f1312.js.map",
+    "453.c581dcb3.chunk.js.map": "/PersonalPortfolio/static/js/453.c581dcb3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c84fa983.css",
+    "static/js/main.ef1f1312.js"
+  ]
+}
