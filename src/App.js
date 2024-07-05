@@ -6,14 +6,22 @@ import About from "./Components/Content/About";
 import Projects from "./Components/Content/Projects";
 import ProjectCard from "./Components/Content/Helpers/ProjectCard";
 import ProjectCardPlaceHolder from "./Components/Content/Helpers/ProjectCardPlaceHolder";
+import ErrorDisplay from "./Components/Content/Helpers/ErrorDisplay";
+import Skill from "./Components/Content/Skill";
+import SkillCard from "./Components/Content/Helpers/SkillCard";
 
 function App() {
   return (
     <>
       <Navbar />
       <Home />
-      <Projects /> 
-      <ProjectCardPlaceHolder />
+      <Skill />
+      <Projects />
+      <Projects />
+      {/* <ProjectCardPlaceHolder /> */}
+      {/* <ErrorDisplay /> */}
+
+      {/* <SkillCard /> */}
     </>
   );
 }

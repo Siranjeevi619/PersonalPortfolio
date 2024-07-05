@@ -6,7 +6,7 @@ import ExitSurveyImage from "../../assets/Images/ExitSurvey.png";
 import ToDoAppListImage from "../../assets/Images/TodoApp.png";
 import TicTacToeImage from "../../assets/Images/TicTacToe.png";
 import StarCafeImage from "../../assets/Images/StarCafe.png";
-
+import "../../Styles/Project.css";
 const projectData = [
   {
     name: "cloudatom",
@@ -15,6 +15,9 @@ const projectData = [
       "An online gaming purchasing platform made by HTML, CSS, JavaScript, and Bootstrap",
     role: "Frontend Developer",
     repository: "#",
+    Message: "He forgets to share repository link",
+    LinkedIn:
+      "https://www.linkedin.com/posts/siranjeevi-selvam-003626258_html-css-bootstrap5-activity-7176939557421023233-qii4?utm_source=share&utm_medium=member_desktop",
     imageSrc: CloudatomImage,
   },
   {
@@ -65,10 +68,10 @@ const projectData = [
 const Projects = () => {
   return (
     <>
-      <div className="">
+      <div className="bg-light ">
         <div className="py-5">
           <div className="container">
-            <h1 className="text-center h1">Projects</h1>
+            <h1 className="text-center h1 py-3">Projects</h1>
             <div className="row">
               {projectData.map((project, index) => (
                 <ProjectCard key={index} {...project} />

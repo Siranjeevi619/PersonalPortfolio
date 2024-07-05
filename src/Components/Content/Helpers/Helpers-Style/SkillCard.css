@@ -1,0 +1,53 @@
+
+.skill-card {
+  width: 12rem;
+  transition: transform 0.1s ease; 
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+}
+
+
+
+.skill-logo {
+  max-height: 80px;
+  width: auto;
+  margin: 10px;
+}
+
+@media (max-width: 576px) {
+  .skill-card {
+    width: 10rem;
+  }
+
+  .skill-logo {
+    max-height: 60px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .skill-card {
+    width: 15rem;
+  }
+
+  .skill-logo {
+    max-height: 100px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-subtitle {
+    font-size: 1rem;
+  }
+}
