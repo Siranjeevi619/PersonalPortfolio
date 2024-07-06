@@ -17,8 +17,8 @@
    color:black;
    background-color: #00c8ff5e;
    border-radius: 8px;
-   margin:8px;
-   border: 1px solid #00C9FF;
+   padding:2px;
+   border-bottom: 2px solid #00C9FF;
 }
 
 .nav-icon{
@@ -29,13 +29,4 @@
 }
 .nav-icon:hover {
      opacity: 1;
-            /* text-shadow: 
-                0 0 0.5rem #fff,
-                0 0 1rem #fff,
-                0 0 1.5rem #00C9FF,
-                0 0 2.5rem #00C9FF,
-                0 0 4rem #00C9FF,
-                0 0 5.5rem #00C9FF,
-                0 0 6rem #00C9FF,
-                0 0 9.5rem #00C9FF; */
         }
