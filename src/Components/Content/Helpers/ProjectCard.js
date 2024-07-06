@@ -48,7 +48,7 @@ function ProjectCard({
             </span>
           </p>
 
-          <div className="mt-auto">
+          <div className="mt-3">
             {repository ? (
               repository !== "#" ? (
                 <a href={repository} className="btn btn-primary">

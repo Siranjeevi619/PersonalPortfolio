@@ -102,7 +102,7 @@ function About() {
               <div className="school-mark-hsc">
                 <h3 className="h3 mt-2">Karpagam College Of Engineering</h3>
                 <h4 className="card-title">Till 3rd Semester</h4>
-                <h6 className="card-subtitle mb-2 text-muted">Batch 2022</h6>
+                <h6 className="card-subtitle mb-2 text-muted">Batch 2026</h6>
                 <div className="progress col-12 col-md-6">
                   <div
                     className="progress-bar"
