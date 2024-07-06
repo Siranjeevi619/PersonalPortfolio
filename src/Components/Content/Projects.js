@@ -70,9 +70,9 @@ const Projects = () => {
   return (
     <>
       <div className="bg-light " id="Projects">
-        <div className="py-5">
+        <div className="py-md-5 mt-3">
           <div className="container">
-            <h1 className="text-center h1 py-3">
+            <h1 className="text-center ms-3 h1 py-3">
               Projects{" "}
               <Link to="Projects">
                 <i class="bi bi-link-45deg nav-icon"></i>

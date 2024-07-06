@@ -78,8 +78,8 @@ const Skills = [
 
 function Skill() {
   return (
-    <div className="bg-skill py-5" id="Skills">
-      <div className="text-center h1">
+    <div className="bg-skill py-md-5 mt-3" id="Skills">
+      <div className="text-center ms-3 h1">
         Skills{" "}
         <Link to="Skills">
           <i class="bi bi-link-45deg nav-icon"></i>
