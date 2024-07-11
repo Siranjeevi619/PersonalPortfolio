@@ -70,7 +70,7 @@ const Skills = [
   },
   {
     name: "Mongo DB",
-    level: "Intermediate",
+    level: "Beginner",
     imageSrc: MongoDBLogo,
     fillColor: "#5D4037",
   },
