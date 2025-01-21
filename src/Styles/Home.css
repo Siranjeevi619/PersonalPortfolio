@@ -1,38 +1,44 @@
 img {
-    height:400px;
-    width: 400px;
+  height: 400px;
+  width: 400px;
+}
+
+.leetcode-icon {
+  height: 25px;
+  width: 30px;
+  /* color: blue; */
 }
 
 h1 {
-    font-size: 70px;
+  font-size: 70px;
 }
 
 @media (max-width: 1024px) {
-    h1 {
-        font-size: 50px;
-    }
-    img {
-        height: 400px;
-        width: 400px;
-    }
+  h1 {
+    font-size: 50px;
+  }
+  img {
+    height: 400px;
+    width: 400px;
+  }
 }
 
 @media (max-width: 768px) {
-    h1 {
-        font-size: 30px;
-    }
-    img {
-        height: 300px;
-        width: 300px;
-    }
+  h1 {
+    font-size: 30px;
+  }
+  img {
+    height: 300px;
+    width: 300px;
+  }
 }
 
 @media (max-width: 425px) {
-    h1 {
-        font-size: 20px;
-    }
-    img {
-        height: 200px;
-        width: 200px;
-    }
+  h1 {
+    font-size: 20px;
+  }
+  img {
+    height: 200px;
+    width: 200px;
+  }
 }

@@ -3,15 +3,21 @@ import Typed from "typed.js";
 import "../../Styles/Home.css";
 import { useEffect } from "react";
 import DeveloperLogo from "../../assets/Images/1713845068875.jpg";
-import Resume from "../../assets/docs/Siranjeevi-resume.pdf";
+import Resume from "../../assets/docs/f2.pdf";
 import { Link } from "react-scroll";
 import About from "./About";
+import leetcodeIcon from "../../assets/Icons/leetcode.svg";
 function Home() {
   const el = React.useRef(null);
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Frontend Designer", "Frontend Developer", "Web Developer"],
+      strings: [
+        "Frontend Designer",
+        "Frontend Developer",
+        "Backend Devloper",
+        "MERN Developer",
+      ],
       typeSpeed: 150,
       loopCount: Infinity,
     });
@@ -39,15 +45,17 @@ function Home() {
                 <span className="text-break mt-md-4"></span>
                 <span ref={el} className="text-primary" />
               </h1>
-              <p className=" text-lighter text-break">
-                Hello! I'm Siranjeevi, a frontend developer passionate about
-                creating user-friendly web experiences. With skills in HTML,
-                CSS, JavaScript (React), Bootstrap, Material UI and a solid
-                background in C, Java, and Python, I enjoy blending design with
-                functionality to build responsive and intuitive applications.
-                Let's collaborate on crafting engaging digital solutions that
-                make an impact.
+              <p className="text-lighter text-break text-justify ">
+                Hello! I'm{" "}
+                <span className="text-primary fw-bolder">Siranjeevi</span>, a
+                MERN stack developer passionate about building dynamic and
+                scalable web applications. Proficient in MongoDB, Express.js,
+                React, and Node.js, along with strong skills in HTML, CSS, and
+                JavaScript, I enjoy creating seamless user experiences and
+                robust backend solutions. Let's collaborate to craft impactful
+                and innovative digital solutions!
               </p>
+
               <div className="d-flex align-items-center justify-content-md-start justify-content-evenly">
                 <a href={Resume}>
                   <button className="  btn btn-primary shadow-lg ">
@@ -55,7 +63,7 @@ function Home() {
                     <i className="bi bi-file-earmark-person-fill"></i>
                   </button>
                 </a>
-                <Link to="/Contact" className="ms-3 ms-md-5">
+                <Link to="Contact" className="ms-3 ms-md-5">
                   <button className="btn btn-outline-primary shadow">
                     Contact <i className="bi bi-send-fill"></i>
                   </button>

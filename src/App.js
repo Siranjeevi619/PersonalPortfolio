@@ -11,6 +11,7 @@ import Skill from "./Components/Content/Skill";
 import SkillCard from "./Components/Content/Helpers/SkillCard";
 import Contact from "./Components/Content/Contact";
 import Footer from "./Components/Footer";
+import "./App.css";
 
 function App() {
   return (

@@ -40,21 +40,22 @@ function About() {
           </h1>
           <div className="row">
             <div className="col-12 col-md-9 order-2 order-md-1" id="info">
-              <p className="mt-2">
+              <p className="mt-2 text-justify">
                 Hello! My name is Siranjeevi, and I am currently pursuing a
                 Bachelor of Technology in Information Technology at Karpagam
                 College of Engineering. I am passionate about web development
-                and have been honing my skills as a React developer. In my
-                projects, I frequently use the Bootstrap CSS framework and
-                Material-UI to create responsive and visually appealing user
-                interfaces. I am also proficient in several programming
-                languages, including C, Java, Python, and JavaScript. My
-                intermediate-level expertise in these languages allows me to
-                tackle various coding challenges and contribute effectively to
-                different aspects of software development. Additionally, I enjoy
-                exploring emerging technologies and frameworks to stay updated
-                with industry trends, ensuring my skills are always relevant and
-                adaptable in a fast-paced tech environment.
+                and specialize as a MERN stack developer. In my projects, I
+                leverage MongoDB, Express.js, React, and Node.js to build
+                dynamic and scalable applications. I also utilize frameworks
+                like Bootstrap CSS and Material-UI to design responsive and
+                visually appealing user interfaces. Additionally, I am
+                proficient in programming languages such as C, Java, Python, and
+                JavaScript, along with skills in Docker and Linux, which enable
+                me to manage containers and develop efficient solutions in
+                diverse environments. I am eager to explore emerging
+                technologies and frameworks to stay ahead in the ever-evolving
+                tech landscape, ensuring my skills remain versatile and
+                impactful.
               </p>
 
               <h2 className="h2 underline-text">Education</h2>
@@ -101,7 +102,7 @@ function About() {
               </div>
               <div className="school-mark-hsc">
                 <h3 className="h3 mt-2">Karpagam College Of Engineering</h3>
-                <h4 className="card-title">Till 3rd Semester</h4>
+                <h4 className="card-title">Till 4rd Semester</h4>
                 <h6 className="card-subtitle mb-2 text-muted">Batch 2026</h6>
                 <div className="progress col-12 col-md-6">
                   <div
@@ -111,9 +112,9 @@ function About() {
                     aria-valuemin="0"
                     aria-valuemax="10"
                     ref={cgpaRef}
-                    style={{ "--progress-width": "76.9%" }}
+                    style={{ "--progress-width": "76.7%" }}
                   >
-                    7.69
+                    7.67
                   </div>
                 </div>
               </div>

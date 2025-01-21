@@ -13,42 +13,59 @@ import MongoDBLogo from "../../assets/Icons/icons8-mongodb-480.png";
 import SkillCard from "./Helpers/SkillCard";
 import { Link } from "react-scroll";
 
+// import ExpressLogo from "../../assets/Icons/icons8-express-js (1).svg";
+import LinuxLogo from "../../assets/Icons/linux.png";
+// import DockerLogo from "../../assets/Icons/icons8-docker.svg";
+
 const Skills = [
   {
     name: "HTML",
-    level: "pro",
+    level: "Pro",
     imageSrc: HTMLLogo,
     fillColor: "#E86229",
   },
   {
     name: "CSS",
-    level: "intermediate",
+    level: "Intermediate",
     imageSrc: CSSLogo,
     fillColor: "#254BDD",
   },
   {
     name: "JavaScript",
-    level: "intermediate",
+    level: "Intermediate",
     imageSrc: JavaScriptLogo,
     fillColor: "#EFD81D",
   },
   {
     name: "Boostrap",
-    level: "intermediate",
+    level: "Intermediate",
     imageSrc: BootstrapLogo,
     fillColor: "#8F1AFF",
   },
   {
     name: "React JS",
-    level: "intermediate",
+    level: "Intermediate",
     imageSrc: ReactLogo,
     fillColor: "#58C4DC",
   },
   {
-    name: "Material UI",
+    name: "Mongo DB",
     level: "Beginner",
-    imageSrc: MaterialUILogo,
-    fillColor: "#0073E5",
+    imageSrc: MongoDBLogo,
+    fillColor: "#5D4037",
+  },
+
+  {
+    name: "Node Js",
+    level: "Intermediate",
+    imageSrc: "https://img.icons8.com/color/480/nodejs.png",
+    fillColor: "#5FA624",
+  },
+  {
+    name: "Express Js",
+    level: "Intemediate",
+    imageSrc: "https://img.icons8.com/color/480/express-js.png",
+    fillColor: "#b30000",
   },
   {
     name: "Java",
@@ -69,10 +86,22 @@ const Skills = [
     fillColor: "#FFD448",
   },
   {
-    name: "Mongo DB",
+    name: "Material UI",
     level: "Beginner",
-    imageSrc: MongoDBLogo,
-    fillColor: "#5D4037",
+    imageSrc: MaterialUILogo,
+    fillColor: "#0073E5",
+  },
+  {
+    name: "Docker",
+    level: "Beginner",
+    imageSrc: "https://img.icons8.com/color/480/docker.png",
+    fillColor: "",
+  },
+  {
+    name: "Linux",
+    level: "Ubuntu",
+    imageSrc: LinuxLogo,
+    fillColor: "#FFCC33 ",
   },
 ];
 
