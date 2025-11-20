@@ -12,8 +12,13 @@ import SkillCard from "./Components/Content/Helpers/SkillCard";
 import Contact from "./Components/Content/Contact";
 import Footer from "./Components/Footer";
 import "./App.css";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    document.title = "Siranjeevi - Portfolio";
+  }, []);
+
   return (
     <>
       <Navbar />
