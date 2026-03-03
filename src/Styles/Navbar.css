@@ -1,21 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+MX:wght@100..400&display=swap');
-
-.hero-name{
-     font-family: "Playwrite MX", cursive;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+.glass-navbar {
+  background: rgba(13, 13, 18, 0.4);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 15px 0;
+  transition: all 0.3s ease;
 }
 
-@keyframes spin {
-    0%{
-    transform: rotate(0deg);
-    }
-    100%{
-    transform: rotate(360deg);
-    }
+.glass-nav-inner {
+  padding: 8px 24px;
 }
-.spinner:hover{
-      animation: spin 1s linear;
 
+.navbar-brand h3 {
+  color: #fff;
+  letter-spacing: -1px;
+}
+
+.brand-dot {
+  color: var(--primary-glow);
+}
+
+.nav-link-custom {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+
+.nav-link-custom:hover {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.custom-toggler {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        margin-top: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 20px;
+        backdrop-filter: blur(20px);
+    }
 }

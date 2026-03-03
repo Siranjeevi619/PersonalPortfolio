@@ -1,3 +1,84 @@
-.no-resize{
-    resize: none;
+.contact-section {
+  padding: 80px 0;
+}
+
+.contact-intro {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.contact-info-glass {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-radius: 20px !important;
+}
+
+.info-icon {
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 201, 255, 0.1);
+  color: var(--primary-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.2rem;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.info-value {
+  color: #fff;
+  font-weight: 600;
+}
+
+.contact-img {
+    max-width: 250px;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 20px rgba(0, 201, 255, 0.2));
+}
+
+.contact-form-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.custom-label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.glass-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 12px 20px;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary-glow);
+    box-shadow: 0 0 15px rgba(0, 201, 255, 0.2);
+}
+
+.glass-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    .contact-form-card {
+        margin-top: 30px;
+    }
 }

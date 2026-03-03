@@ -1,14 +1,11 @@
 import "./Styles/style.css";
 import Home from "./Components/Content/Home";
 import Navbar from "./Components/Navbar";
-import "./Styles/Navbar.css";
 import About from "./Components/Content/About";
+import "./Styles/Navbar.css";
 import Projects from "./Components/Content/Projects";
-import ProjectCard from "./Components/Content/Helpers/ProjectCard";
-import ProjectCardPlaceHolder from "./Components/Content/Helpers/ProjectCardPlaceHolder";
-import ErrorDisplay from "./Components/Content/Helpers/ErrorDisplay";
+import Certifications from "./Components/Content/Certifications";
 import Skill from "./Components/Content/Skill";
-import SkillCard from "./Components/Content/Helpers/SkillCard";
 import Contact from "./Components/Content/Contact";
 import Footer from "./Components/Footer";
 import "./App.css";
@@ -23,6 +20,8 @@ function App() {
     <>
       <Navbar />
       <Home />
+      <About />
+      <Certifications />
       <Skill />
       <Projects />
       <Contact />

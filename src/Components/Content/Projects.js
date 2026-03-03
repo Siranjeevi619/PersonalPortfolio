@@ -6,61 +6,83 @@ import ExitSurveyImage from "../../assets/Images/ExitSurvey.png";
 import ToDoAppListImage from "../../assets/Images/TodoApp.png";
 import TicTacToeImage from "../../assets/Images/TicTacToe.png";
 import StarCafeImage from "../../assets/Images/StarCafe.png";
+import ShopBotImage from "../../assets/Images/ShopBot.png";
+import ThinkerImage from "../../assets/Images/Thinker.png";
+import CityzenImage from "../../assets/Images/Cityzen.png";
 import "../../Styles/Project.css";
 import { Link } from "react-scroll";
+
 const projectData = [
   {
-    name: "cloudatom",
-    subName: "A Gaming E-Commerce Site",
-    description:
-      "An online gaming purchasing platform made by HTML, CSS, JavaScript, and Bootstrap",
+    name: "Shop Assistant Bot",
+    subName: "AI Inventory Assistant",
+    description: "An AI-powered assistant using FastAPI and LangChain to manage shop inventory with natural language processing via Groq LLM.",
+    role: "AI Developer",
+    repository: "https://github.com/Siranjeevi619",
+    imageSrc: ShopBotImage,
+  },
+  {
+    name: "Thinker",
+    subName: "Serverless Notes App",
+    description: "A secure, scalable notes application built on AWS using Lambda, API Gateway, and DynamoDB for a completely serverless architecture.",
+    role: "Cloud Developer",
+    repository: "https://github.com/Siranjeevi619",
+    imageSrc: ThinkerImage,
+  },
+  {
+    name: "Cityzen",
+    subName: "Citizen Management Portal",
+    description: "A microservices-based portal for citizen services, implementing JWT authentication with Spring Boot and containerized with Docker.",
+    role: "Fullstack Developer",
+    repository: "https://github.com/Siranjeevi619",
+    imageSrc: CityzenImage,
+  },
+  {
+    name: "CloudAtom",
+    subName: "Gaming E-Commerce",
+    description: "A high-performance gaming platform built with modern web technologies, focusing on seamless user transactions and immersive design.",
     role: "Frontend Developer",
     repository: "#",
-    Message: "He forgets to share repository link",
-    LinkedIn:
-      "https://www.linkedin.com/posts/siranjeevi-selvam-003626258_html-css-bootstrap5-activity-7176939557421023233-qii4?utm_source=share&utm_medium=member_desktop",
+    LinkedIn: "https://www.linkedin.com/posts/siranjeevi-selvam-003626258_html-css-bootstrap5-activity-7176939557421023233-qii4",
     imageSrc: CloudatomImage,
   },
   {
     name: "Learn HUB",
-    subName: "A Learning platform site",
-    description:
-      "A Learning platform site made by HTML, CSS, JavaScript, and Bootstrap",
+    subName: "LMS Platform",
+    description: "A comprehensive learning management system designed to facilitate online education with an intuitive course management interface.",
     role: "Frontend Developer",
     repository: "https://github.com/Siranjeevi619/LearnHub",
     imageSrc: LearnHubImage,
   },
   {
-    name: "Exit Survey Project",
-    subName: "Survey Project developed for College",
-    description:
-      "College Survey Project made by PHP, JavaScript, and Bootstrap",
-    role: "Frontend Developer",
+    name: "Exit Survey",
+    subName: "Institutional Analytics",
+    description: "A data-driven survey tool developed for academic insights, featuring robust PHP backend integration and dynamic reporting.",
+    role: "Fullstack Developer",
     repository: "http://121.200.48.27:8081/ExitSurvey/LoginPage.php",
     imageSrc: ExitSurveyImage,
   },
   {
-    name: "ToDo App",
-    subName: "An App to Remember",
-    description: "A responsive todo app made by React and Bootstrap",
-    role: "Frontend Developer",
+    name: "Task Orbit",
+    subName: "Productivity App",
+    description: "A sleek, responsive task management application built with React, featuring real-time state management and elegant UI transitions.",
+    role: "React Developer",
     repository: "https://github.com/Siranjeevi619/todoApp",
     imageSrc: ToDoAppListImage,
   },
   {
     name: "Tic Tac Toe",
-    subName: "A Tic Tac Toe game",
-    description: "A responsive Tic Tac Toe game made by React and Bootstrap",
+    subName: "Strategic Gaming",
+    description: "A modern reimagining of the classic game, featuring advanced state synchronization and a mobile-first responsive architecture.",
     role: "React Developer",
     repository: "https://github.com/Siranjeevi619/TicTacToe-React",
     imageSrc: TicTacToeImage,
   },
   {
     name: "Star Cafe",
-    subName: "An Online Food Order Site",
-    description:
-      "A responsive Food ordering platform made by HTML, CSS, and Bootstrap",
-    role: "React Developer",
+    subName: "Food Ordering System",
+    description: "An elegant digital storefront for modern cafes, prioritizing visual appeal and streamlined navigation for online orders.",
+    role: "Frontend Developer",
     repository: "https://github.com/Siranjeevi619/TicTacToe-React",
     imageSrc: StarCafeImage,
   },
@@ -68,31 +90,32 @@ const projectData = [
 
 const Projects = () => {
   return (
-    <>
-      <div className="bg-light " id="Projects">
-        <div className="py-md-5 mt-3">
-          <div className="container">
-            <h1 className="text-center ms-3 h1 py-3">
-              Projects{" "}
-              <Link to="Projects">
-                <i class="bi bi-link-45deg nav-icon"></i>
-              </Link>
+    <section className="projects-section py-5" id="Projects">
+      <div className="container">
+        <div className="glass-container p-4 p-md-5">
+          <div className="d-flex align-items-center mb-5">
+            <h1 className="section-title mb-0">
+              Featured Work <span className="title-glow">.</span>
             </h1>
-            <div className="row">
-              <p className="text-md-center text-start pb-2">
-                During my learning journey as a frontend developer, I developed
-                a project that reinforced my theoretical knowledge and enhanced
-                my problem-solving and development skills, providing valuable
-                insights into the complete development lifecycle.
-              </p>
-              {projectData.map((project, index) => (
-                <ProjectCard key={index} {...project} />
-              ))}
-            </div>
+            <Link to="Projects" className="ms-3">
+              <i className="bi bi-folder2-open nav-icon h4 mb-0"></i>
+            </Link>
+          </div>
+          
+          <p className="projects-intro mb-5">
+            A collection of digital solutions where I've bridged the gap between 
+            complex requirements and elegant user experiences. Each project represents 
+            a milestone in my journey toward technical excellence.
+          </p>
+
+          <div className="row g-4">
+            {projectData.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

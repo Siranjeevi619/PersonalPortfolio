@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Modal from "react-modal";
-import "../Helpers/Helpers-Style/ErrorDisplay.css";
+import "./Helpers-Style/ErrorDisplay.css";
 import PropTypes from "prop-types";
 
+// Set root element for accessibility
 Modal.setAppElement("#root");
 
-function ErrorDisplay(props) {
-  const [openCard, setOpenCard] = useState(true);
-
-  const handleCard = () => {
-    setOpenCard(false);
-  };
-
+function ErrorDisplay({ Message, onClose }) {
   return (
     <Modal
-      isOpen={openCard}
-      className="ReactModal__Content"
-      overlayClassName="ReactModal__Overlay"
-      onRequestClose={handleCard}
+      isOpen={true}
+      className="glass-modal"
+      overlayClassName="glass-overlay"
+      onRequestClose={onClose}
+      closeTimeoutMS={300}
     >
-      {props.Message ? <h3>{props.Message}</h3> : <h3>Error does not found</h3>}
-      <div className="d-flex justify-content-center align-items-center">
-        <button className="btn btn-primary text-center" onClick={handleCard}>
-          Close
+      <div className="glass-modal-content text-center p-4">
+        <div className="modal-icon mb-4">
+          <i className="bi bi-shield-lock text-primary-glow"></i>
+        </div>
+        <h3 className="modal-title mb-3">Notice</h3>
+        <p className="modal-message mb-4">{Message || "Resource currently unavailable."}</p>
+        <button className="premium-button px-5" onClick={onClose}>
+          Understood
         </button>
       </div>
     </Modal>
@@ -30,7 +30,8 @@ function ErrorDisplay(props) {
 }
 
 ErrorDisplay.propTypes = {
-  message: PropTypes.string.isRequired,
+  Message: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default ErrorDisplay;

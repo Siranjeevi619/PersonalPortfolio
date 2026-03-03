@@ -1,10 +1,23 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+              radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+              radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%), 
+              radial-gradient(at 0% 50%, hsla(225,39%,30%,1) 0, transparent 50%), 
+              radial-gradient(at 100% 50%, hsla(253,16%,7%,1) 0, transparent 50%), 
+              radial-gradient(at 0% 100%, hsla(339,49%,30%,1) 0, transparent 50%), 
+              radial-gradient(at 50% 100%, hsla(225,39%,30%,1) 0, transparent 50%), 
+              radial-gradient(at 100% 100%, hsla(253,16%,7%,1) 0, transparent 50%);
+  background-attachment: fixed;
+  background-color: #0d0d12;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 code {

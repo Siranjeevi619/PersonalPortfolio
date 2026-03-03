@@ -1,63 +1,60 @@
-
-
-.ReactModal__Overlay {
+.glass-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
 }
 
-.ReactModal__Content {
-  position: relative;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 500px;
+.glass-modal {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  max-width: 450px;
   width: 90%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  animation: slide-down 0.3s ease-out;
-  margin: 20px;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.close-button:focus {
   outline: none;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+  transform: scale(0.9);
+  animation: modalScaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@media (max-width: 768px) {
-  .ReactModal__Content {
-    padding: 15px;
-    font-size: 0.9rem;
-  }
-
-  .close-button {
-    font-size: 1.25rem;
-  }
+.modal-icon i {
+  font-size: 4rem;
+  color: var(--primary-glow);
+  filter: drop-shadow(0 0 15px rgba(0, 201, 255, 0.4));
 }
 
-@media (max-width: 480px) {
-  .ReactModal__Content {
-    padding: 10px;
-    font-size: 0.8rem;
-    width: 200px;
-  }
-
-  .close-button {
-    font-size: 1rem;
-  }
+.modal-title {
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
+
+.modal-message {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalScaleUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* React Modal specific transition */
+.ReactModal__Overlay--after-open { opacity: 1; }
+.ReactModal__Overlay--before-close { opacity: 0; }
