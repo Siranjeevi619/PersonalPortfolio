@@ -124,9 +124,10 @@ function ProjectRow({ project, index }) {
       },
       { threshold: 0.1 },
     );
-    if (rowRef.current) observer.observe(rowRef.current);
+    const rowEl = rowRef.current;
+    if (rowEl) observer.observe(rowEl);
     return () => {
-      if (rowRef.current) observer.unobserve(rowRef.current);
+      if (rowEl) observer.unobserve(rowEl);
     };
   }, []);
 
@@ -187,9 +188,10 @@ const Projects = () => {
       },
       { threshold: 0.1 },
     );
-    if (headingRef.current) observer.observe(headingRef.current);
+    const headingEl = headingRef.current;
+    if (headingEl) observer.observe(headingEl);
     return () => {
-      if (headingRef.current) observer.unobserve(headingRef.current);
+      if (headingEl) observer.unobserve(headingEl);
     };
   }, []);
 

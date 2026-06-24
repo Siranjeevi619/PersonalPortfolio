@@ -48,12 +48,15 @@ function Skill() {
       { threshold: 0.1 }
     );
 
-    if (headingRef.current) observer.observe(headingRef.current);
-    if (gridRef.current) observer.observe(gridRef.current);
+    const headingEl = headingRef.current;
+    const gridEl = gridRef.current;
+
+    if (headingEl) observer.observe(headingEl);
+    if (gridEl) observer.observe(gridEl);
 
     return () => {
-      if (headingRef.current) observer.unobserve(headingRef.current);
-      if (gridRef.current) observer.unobserve(gridRef.current);
+      if (headingEl) observer.unobserve(headingEl);
+      if (gridEl) observer.unobserve(gridEl);
     };
   }, []);
 

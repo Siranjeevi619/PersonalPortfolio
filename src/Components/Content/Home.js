@@ -18,10 +18,12 @@ function Home() {
       { threshold: 0.1 },
     );
 
-    if (heroRef.current) observer.observe(heroRef.current);
+    const heroEl = heroRef.current;
+
+    if (heroEl) observer.observe(heroEl);
 
     return () => {
-      if (heroRef.current) observer.unobserve(heroRef.current);
+      if (heroEl) observer.unobserve(heroEl);
     };
   }, []);
 

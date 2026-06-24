@@ -25,12 +25,15 @@ function Contact() {
       { threshold: 0.1 }
     );
 
-    if (headingRef.current) observer.observe(headingRef.current);
-    if (formRef.current) observer.observe(formRef.current);
+    const headingEl = headingRef.current;
+    const formEl = formRef.current;
+
+    if (headingEl) observer.observe(headingEl);
+    if (formEl) observer.observe(formEl);
 
     return () => {
-      if (headingRef.current) observer.unobserve(headingRef.current);
-      if (formRef.current) observer.unobserve(formRef.current);
+      if (headingEl) observer.unobserve(headingEl);
+      if (formEl) observer.unobserve(formEl);
     };
   }, []);
 
