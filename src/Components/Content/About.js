@@ -1,139 +1,110 @@
 import React, { useEffect, useRef } from "react";
-import "../../Styles/style.css";
 import "../../Styles/About.css";
-import ReactLogo from "../../assets/Icons/ReactLogo.png";
 
 function About() {
-  const sslcRef = useRef(null);
-  const hscRef = useRef(null);
-  const cgpaRef = useRef(null);
+  const headingRef = useRef(null);
+  const contentRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("start-animation");
+            entry.target.classList.add("visible");
           }
         });
       },
       { threshold: 0.1 }
     );
 
-    const sslcNode = sslcRef.current;
-    const hscNode = hscRef.current;
-    const cgpaNode = cgpaRef.current;
-
-    if (sslcNode) observer.observe(sslcNode);
-    if (hscNode) observer.observe(hscNode);
-    if (cgpaNode) observer.observe(cgpaNode);
+    if (headingRef.current) observer.observe(headingRef.current);
+    if (contentRef.current) observer.observe(contentRef.current);
 
     return () => {
-      if (sslcNode) observer.unobserve(sslcNode);
-      if (hscNode) observer.unobserve(hscNode);
-      if (cgpaNode) observer.unobserve(cgpaNode);
+      if (headingRef.current) observer.unobserve(headingRef.current);
+      if (contentRef.current) observer.unobserve(contentRef.current);
     };
   }, []);
 
   return (
-    <section className="about-section" id="About">
-      <div className="container">
-        <div className="glass-container about-card p-4 p-md-5">
-          <div className="row align-items-center">
-            <div className="col-12 col-md-8">
-              <h1 className="section-title mb-4">
-                About Myself <span className="title-glow">.</span>
-              </h1>
-              <p className="about-description mb-5">
-                Hello! My name is <span className="highlight">Siranjeevi</span>, 
-                an IT student at Karpagam College of Engineering with a passion for 
-                crafting high-performance web applications. I specialize in 
-                <span className="highlight">software development</span> and modern AI integrations. 
-                My toolkit includes MongoDB, Express, React, Node.js, and cloud platforms like AWS, 
-                ensuring every project I build is scalable, robust, and visually stunning.
-              </p>
+    <section className="editorial-section about-editorial" id="About">
+      <div className="editorial-container">
+        <h2 className="section-heading reveal" ref={headingRef}>
+          ABOUT
+        </h2>
 
-              <div className="experience-section mb-5">
-                <h2 className="subtitle mb-4">Professional Experience</h2>
-                <div className="education-item glass-container p-3">
-                  <div className="d-flex justify-content-between align-items-start mb-2">
-                    <div>
-                      <h5 className="school-name mb-0">Haskel AI</h5>
-                      <span className="degree-name">Frontend Developer Intern • Feb 2025 – Present</span>
-                    </div>
-                    <span className="percentage-badge">Remote</span>
-                  </div>
-                  <p className="text-muted-custom small mt-2 mb-0">
-                    Developed LMS modules using React, optimized performance by reducing re-renders, 
-                    and managed dynamic content with efficient state handling.
-                  </p>
-                </div>
-              </div>
+        <div className="about-content reveal" ref={contentRef}>
+          <div className="about-bio-area">
+            <p className="about-bio">
+              I am a <span className="highlight">Full Stack Developer</span> specializing in the MERN stack, Spring Boot, and AI integrations (RAG, LangChain). Experienced in building scalable web applications, microservices, and RESTful APIs using AWS, Docker, and CI/CD pipelines. As a strong algorithmic problem-solver with <span className="highlight">600+ LeetCode DSA</span> solved, I am dedicated to delivering secure, high-performance, and user-centric software solutions.
+            </p>
+          </div>
 
-              <h2 className="subtitle mb-4">Education Journey</h2>
-              <div className="education-grid">
-                <div className="education-item glass-container p-3 mb-4">
-                  <div className="d-flex justify-content-between align-items-start mb-2">
-                    <div>
-                      <h5 className="school-name mb-0">Karpagam College Of Engineering</h5>
-                      <span className="degree-name">B.Tech IT • Batch 2026</span>
-                    </div>
-                    <span className="percentage-badge">7.6 CGPA</span>
-                  </div>
-                  <div className="custom-progress">
-                    <div
-                      className="progress-fill"
-                      ref={cgpaRef}
-                      style={{ "--progress-width": "76%" }}
-                    ></div>
-                  </div>
+          <div className="about-details-grid">
+            {/* Experience */}
+            <div className="about-block">
+              <h3 className="about-block-title">EXPERIENCE</h3>
+              <div className="about-item">
+                <div className="about-item-header">
+                  <span className="about-item-name">Haskel AI</span>
+                  <span className="about-item-date">Feb 2025 — Feb 2026</span>
                 </div>
-
-                <div className="education-item glass-container p-3 mb-4">
-                  <div className="d-flex justify-content-between align-items-start mb-2">
-                    <div>
-                      <h5 className="school-name mb-0">S D Eaden Matric Higher Secondary School</h5>
-                      <span className="degree-name">HSC • Batch 2022</span>
-                    </div>
-                    <span className="percentage-badge">85%</span>
-                  </div>
-                  <div className="custom-progress">
-                    <div
-                      className="progress-fill"
-                      ref={hscRef}
-                      style={{ "--progress-width": "85%" }}
-                    ></div>
-                  </div>
-                </div>
-
-                <div className="education-item glass-container p-3">
-                  <div className="d-flex justify-content-between align-items-start mb-2">
-                    <div>
-                      <h5 className="school-name mb-0">S D Eaden Matric Higher Secondary School</h5>
-                      <span className="degree-name">SSLC • Batch 2020</span>
-                    </div>
-                    <span className="percentage-badge">91%</span>
-                  </div>
-                  <div className="custom-progress">
-                    <div
-                      className="progress-fill"
-                      ref={sslcRef}
-                      style={{ "--progress-width": "91%" }}
-                    ></div>
-                  </div>
-                </div>
+                <p className="about-item-desc">
+                  Frontend Developer Intern · Remote
+                </p>
+                <ul className="about-item-bullets">
+                  <li>Improved UI scalability and reduced redundant codebase by developing 12+ reusable React components for LMS modules.</li>
+                  <li>Enabled dynamic content rendering by integrating 20+ RESTful API endpoints and managing asynchronous data flows.</li>
+                  <li>Optimized performance through code-splitting, memoization, and streamlined state updates to enhance responsiveness.</li>
+                  <li>Collaborated seamlessly with backend teams via Agile practices to define API contracts and review PRs.</li>
+                </ul>
               </div>
             </div>
 
-            <div className="col-12 col-md-4 text-center mt-5 mt-md-0 d-none d-md-block">
-               <div className="floating-logo-container">
-                    <img
-                        className="img-fluid about-spinner"
-                        src={ReactLogo}
-                        alt="React Logo"
-                    />
-                    <div className="logo-shadow"></div>
-               </div>
+            {/* Education */}
+            <div className="about-block">
+              <h3 className="about-block-title">EDUCATION</h3>
+              <div className="about-item">
+                <div className="about-item-header">
+                  <span className="about-item-name">Karpagam College of Engineering</span>
+                  <span className="about-item-date">7.6 CGPA</span>
+                </div>
+                <p className="about-item-desc">B.Tech in Information Technology</p>
+                <p className="about-item-details">Coimbatore · Aug 2022 – May 2026</p>
+              </div>
+              <div className="about-item">
+                <div className="about-item-header">
+                  <span className="about-item-name">SD Eaden Matric HSS</span>
+                  <span className="about-item-date">85%</span>
+                </div>
+                <p className="about-item-desc">Higher Secondary Certificate (HSC)</p>
+                <p className="about-item-details">Vadalur · 2022</p>
+              </div>
+            </div>
+
+            {/* Achievements */}
+            <div className="about-block">
+              <h3 className="about-block-title">AWARDS</h3>
+              <div className="about-item">
+                <div className="about-item-header">
+                  <span className="about-item-name">Best Project Award</span>
+                  <span className="about-item-date">2026</span>
+                </div>
+                <p className="about-item-desc">Karpagam College of Engineering</p>
+                <p className="about-item-details">
+                  Recognized for innovation, technical depth, and real-world applicability among final-year IT graduates.
+                </p>
+              </div>
+              <div className="about-item">
+                <div className="about-item-header">
+                  <span className="about-item-name">Algorithmic Proficiency</span>
+                  <span className="about-item-date">600+ Solved</span>
+                </div>
+                <p className="about-item-desc">LeetCode DSA Profile</p>
+                <p className="about-item-details">
+                  Demonstrated strong problem decomposition and algorithmic thinking by solving 600+ DSA problems.
+                </p>
+              </div>
             </div>
           </div>
         </div>

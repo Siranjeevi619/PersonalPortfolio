@@ -1,118 +1,209 @@
-import React from "react";
-import ProjectCard from "./Helpers/ProjectCard";
-import CloudatomImage from "../../assets/Images/Cloudatom.jpg";
-import LearnHubImage from "../../assets/Images/LearnHub.png";
-import ExitSurveyImage from "../../assets/Images/ExitSurvey.png";
-import ToDoAppListImage from "../../assets/Images/TodoApp.png";
-import TicTacToeImage from "../../assets/Images/TicTacToe.png";
-import StarCafeImage from "../../assets/Images/StarCafe.png";
-import ShopBotImage from "../../assets/Images/ShopBot.png";
-import ThinkerImage from "../../assets/Images/Thinker.png";
-import CityzenImage from "../../assets/Images/Cityzen.png";
+import React, { useEffect, useRef, useState } from "react";
 import "../../Styles/Project.css";
-import { Link } from "react-scroll";
 
 const projectData = [
   {
     name: "Shop Assistant Bot",
     subName: "AI Inventory Assistant",
-    description: "An AI-powered assistant using FastAPI and LangChain to manage shop inventory with natural language processing via Groq LLM.",
     role: "AI Developer",
-    repository: "https://github.com/Siranjeevi619",
-    imageSrc: ShopBotImage,
+    date: "Jan 2026",
+    bullets: [
+      "Built an AI-powered inventory assistant that helps manage shop operations through natural language prompts and structured backend workflows.",
+      "Combined retrieval-style prompt handling with LLM integration to keep responses grounded and useful for day-to-day product management.",
+      "Shaped the project as a learning-focused full stack demo that connects AI tooling with a responsive React interface.",
+    ],
+    techStack: "FastAPI, MongoDB, LangChain, Groq LLM, RAG, React.js",
+    repository: "https://github.com/Siranjeevi619/llm-shopmind-ai",
   },
   {
-    name: "Thinker",
-    subName: "Serverless Notes App",
-    description: "A secure, scalable notes application built on AWS using Lambda, API Gateway, and DynamoDB for a completely serverless architecture.",
-    role: "Cloud Developer",
-    repository: "https://github.com/Siranjeevi619",
-    imageSrc: ThinkerImage,
+    name: "Resume Analyzer",
+    subName: "AI Resume QA Bot",
+    role: "AI Developer",
+    date: "2026",
+    bullets: [
+      "Created a resume analysis workflow that can answer questions against uploaded documents with context-aware retrieval.",
+      "Used an LLM-backed RAG flow to improve answer relevance and reduce hallucinated responses during document review.",
+      "Designed the project as a practical learning build around semantic search and conversational document understanding.",
+    ],
+    techStack:
+      "Python, LangChain, RAG, Vector Embeddings, Semantic Search, React.js",
+    repository: "https://github.com/Siranjeevi619/resume-analyzer",
   },
   {
-    name: "Cityzen",
-    subName: "Citizen Management Portal",
-    description: "A microservices-based portal for citizen services, implementing JWT authentication with Spring Boot and containerized with Docker.",
-    role: "Fullstack Developer",
-    repository: "https://github.com/Siranjeevi619",
-    imageSrc: CityzenImage,
-  },
-  {
-    name: "CloudAtom",
-    subName: "Gaming E-Commerce",
-    description: "A high-performance gaming platform built with modern web technologies, focusing on seamless user transactions and immersive design.",
-    role: "Frontend Developer",
-    repository: "#",
-    LinkedIn: "https://www.linkedin.com/posts/siranjeevi-selvam-003626258_html-css-bootstrap5-activity-7176939557421023233-qii4",
-    imageSrc: CloudatomImage,
+    name: "KB Retriever",
+    subName: "Knowledge Base Retrieval Project",
+    role: "AI Developer",
+    date: "2025",
+    bullets: [
+      "Built a lightweight knowledge-base retrieval project focused on finding the right context quickly from stored material.",
+      "Explored search and retrieval patterns that are useful for LLM-powered applications and learning-oriented AI projects.",
+      "Kept the implementation intentionally practical so it can act as a reusable experimentation base.",
+    ],
+    techStack: "Python, Retrieval, Search, LLM Workflows",
+    repository: "https://github.com/Siranjeevi619/kb-retriever",
   },
   {
     name: "Learn HUB",
     subName: "LMS Platform",
-    description: "A comprehensive learning management system designed to facilitate online education with an intuitive course management interface.",
-    role: "Frontend Developer",
+    role: "Full Stack Developer",
+    date: "2024",
+    bullets: [
+      "Built a learning management platform for organizing courses and educational content with a React-based interface.",
+      "Focused on a clean user flow for browsing learning material and managing the platform experience.",
+      "This project reflects the earlier portfolio work that you used to showcase your frontend and full stack learning builds.",
+    ],
+    techStack: "React.js, Bootstrap, JavaScript",
     repository: "https://github.com/Siranjeevi619/LearnHub",
-    imageSrc: LearnHubImage,
-  },
-  {
-    name: "Exit Survey",
-    subName: "Institutional Analytics",
-    description: "A data-driven survey tool developed for academic insights, featuring robust PHP backend integration and dynamic reporting.",
-    role: "Fullstack Developer",
-    repository: "http://121.200.48.27:8081/ExitSurvey/LoginPage.php",
-    imageSrc: ExitSurveyImage,
   },
   {
     name: "Task Orbit",
     subName: "Productivity App",
-    description: "A sleek, responsive task management application built with React, featuring real-time state management and elegant UI transitions.",
     role: "React Developer",
+    date: "2025",
+    bullets: [
+      "Implemented a responsive task-management experience focused on clarity, fast interactions, and simple state handling.",
+      "Built the app as a clean productivity tool to practice component design and client-side UI flows.",
+      "The project highlights the kind of learning repo that benefits from being visible on your portfolio.",
+    ],
+    techStack: "React.js, JavaScript, Responsive UI",
     repository: "https://github.com/Siranjeevi619/todoApp",
-    imageSrc: ToDoAppListImage,
   },
   {
     name: "Tic Tac Toe",
     subName: "Strategic Gaming",
-    description: "A modern reimagining of the classic game, featuring advanced state synchronization and a mobile-first responsive architecture.",
     role: "React Developer",
+    date: "2025",
+    bullets: [
+      "Reimagined the classic game with a mobile-friendly UI and modern React state handling.",
+      "Used the project to practice interaction design, component reuse, and game-state synchronization.",
+      "Kept the build lightweight so it loads quickly and behaves well on smaller screens.",
+    ],
+    techStack: "React.js, JavaScript, Mobile-first UI",
     repository: "https://github.com/Siranjeevi619/TicTacToe-React",
-    imageSrc: TicTacToeImage,
   },
   {
-    name: "Star Cafe",
-    subName: "Food Ordering System",
-    description: "An elegant digital storefront for modern cafes, prioritizing visual appeal and streamlined navigation for online orders.",
+    name: "Personal Portfolio",
+    subName: "React Portfolio Site",
     role: "Frontend Developer",
-    repository: "https://github.com/Siranjeevi619/TicTacToe-React",
-    imageSrc: StarCafeImage,
+    date: "2025",
+    bullets: [
+      "Developed a personal portfolio using React and Bootstrap to present profile information and featured work.",
+      "Focused on a polished presentation layer and clear navigation to practice responsive portfolio design.",
+      "This repo is a useful reference point for how your current portfolio evolved.",
+    ],
+    techStack: "React.js, Bootstrap, JavaScript",
+    repository: "https://github.com/Siranjeevi619/PersonalPortfolio",
+  },
+  {
+    name: "Develop Your Skills",
+    subName: "MERN E-Learning Platform",
+    role: "Full Stack Developer",
+    date: "2024",
+    bullets: [
+      "Built a MERN-based learning platform that aggregates educational content and organizes it into a structured experience.",
+      "Worked on scalable backend services and a role-aware interface for different platform users.",
+      "Containerization and modular architecture made it a strong learning project for full stack fundamentals.",
+    ],
+    techStack: "React.js, Node.js, Express.js, MongoDB, Docker, JavaScript",
+    repository: "https://github.com/Siranjeevi619/DYS-DevelopYourSkills",
   },
 ];
 
-const Projects = () => {
-  return (
-    <section className="projects-section py-5" id="Projects">
-      <div className="container">
-        <div className="glass-container p-4 p-md-5">
-          <div className="d-flex align-items-center mb-5">
-            <h1 className="section-title mb-0">
-              Featured Work <span className="title-glow">.</span>
-            </h1>
-            <Link to="Projects" className="ms-3">
-              <i className="bi bi-folder2-open nav-icon h4 mb-0"></i>
-            </Link>
-          </div>
-          
-          <p className="projects-intro mb-5">
-            A collection of digital solutions where I've bridged the gap between 
-            complex requirements and elegant user experiences. Each project represents 
-            a milestone in my journey toward technical excellence.
-          </p>
+function ProjectRow({ project, index }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const rowRef = useRef(null);
 
-          <div className="row g-4">
-            {projectData.map((project, index) => (
-              <ProjectCard key={index} {...project} />
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+    if (rowRef.current) observer.observe(rowRef.current);
+    return () => {
+      if (rowRef.current) observer.unobserve(rowRef.current);
+    };
+  }, []);
+
+  return (
+    <a
+      href={project.repository}
+      target="_blank"
+      rel="noreferrer"
+      className="project-row-link"
+    >
+      <div
+        className={`project-row reveal`}
+        ref={rowRef}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        style={{ transitionDelay: `${index * 0.08}s` }}
+      >
+        <div className="project-row-main">
+          <span className="project-bullet">•</span>
+          <span className="project-name-editorial">
+            {project.name.toUpperCase()}
+          </span>
+        </div>
+        <div className={`project-row-meta ${isHovered ? "show" : ""}`}>
+          <span className="project-role-tag">{project.role}</span>
+          <span className="project-arrow">
+            <i className="bi bi-arrow-up-right"></i>
+          </span>
+        </div>
+        {/* Hover description */}
+        <div className={`project-row-description ${isHovered ? "show" : ""}`}>
+          <ul className="project-bullets">
+            {project.bullets.map((bullet, idx) => (
+              <li key={idx}>{bullet}</li>
             ))}
-          </div>
+          </ul>
+          <p className="project-tech-stack">
+            <strong>TECH STACK:</strong> {project.techStack}
+          </p>
+        </div>
+      </div>
+      <div className="separator"></div>
+    </a>
+  );
+}
+
+const Projects = () => {
+  const headingRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+    if (headingRef.current) observer.observe(headingRef.current);
+    return () => {
+      if (headingRef.current) observer.unobserve(headingRef.current);
+    };
+  }, []);
+
+  return (
+    <section className="editorial-section" id="Projects">
+      <div className="editorial-container">
+        <h2 className="section-heading reveal" ref={headingRef}>
+          PROJECTS
+        </h2>
+        <div className="project-list">
+          <div className="separator"></div>
+          {projectData.map((project, index) => (
+            <ProjectRow key={index} project={project} index={index} />
+          ))}
         </div>
       </div>
     </section>

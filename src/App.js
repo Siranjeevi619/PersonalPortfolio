@@ -2,7 +2,6 @@ import "./Styles/style.css";
 import Home from "./Components/Content/Home";
 import Navbar from "./Components/Navbar";
 import About from "./Components/Content/About";
-import "./Styles/Navbar.css";
 import Projects from "./Components/Content/Projects";
 import Certifications from "./Components/Content/Certifications";
 import Skill from "./Components/Content/Skill";
@@ -13,20 +12,20 @@ import { useEffect } from "react";
 
 function App() {
   useEffect(() => {
-    document.title = "Siranjeevi - Portfolio";
+    document.title = "Siranjeevi P — Portfolio";
   }, []);
 
   return (
-    <>
+    <div className="app-wrapper">
       <Navbar />
       <Home />
-      <About />
-      <Certifications />
-      <Skill />
       <Projects />
+      <Skill />
+      <Certifications />
+      <About />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
 

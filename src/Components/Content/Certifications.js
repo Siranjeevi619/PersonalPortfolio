@@ -1,53 +1,63 @@
-import React from "react";
-import "../../Styles/style.css";
+import React, { useEffect, useRef } from "react";
 import "../../Styles/Certification.css";
 
 const certifications = [
-  { name: "Advanced React", issuer: "Meta", date: "Jan 2025" },
-  { name: "AWS Cloud Practitioner Essentials", issuer: "AWS", date: "2024" },
-  { name: "Back-End Apps with Node.js & Express", issuer: "IBM / Coursera", date: "2024" },
-  { name: "React Basics", issuer: "Meta", date: "Aug 2024" },
-  { name: "Introduction to MongoDB", issuer: "MongoDB", date: "2024" },
-  { name: "Javascript (Basic)", issuer: "HackerRank", date: "Mar 2024" },
-  { name: "Responsive Web Design", issuer: "FreeCodeCamp", date: "Oct 2023" },
-  { name: "Problem Solving (Basic)", issuer: "HackerRank", date: "Sept 2023" },
-  { name: "Python (Basic)", issuer: "HackerRank", date: "Sept 2023" },
-  { name: "Python", issuer: "GUVI Geek Networks, IITM Research Park", date: "Aug 2023" },
-  { name: "Game development using pygame", issuer: "GUVI Geek Networks, IITM Research Park", date: "Aug 2023" }
+  { name: "Wipro Java Full Stack Certification", issuer: "Wipro TalentNext", date: "Nov 2025" },
+  { name: "AWS Cloud Practitioner Essentials", issuer: "Amazon Web Services", date: "Nov 2025" },
+  { name: "Developing Back-End Apps with Node.js and Express", issuer: "IBM / Coursera", date: "Jun 2025" },
+  { name: "Advanced React & React", issuer: "Meta / Coursera", date: "Jan 2025, Aug 2024" },
+  { name: "Introduction to MongoDB", issuer: "MongoDB University", date: "Aug 2024" },
 ];
 
 const Certifications = () => {
+  const headingRef = useRef(null);
+  const listRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (headingRef.current) observer.observe(headingRef.current);
+    if (listRef.current) observer.observe(listRef.current);
+
+    return () => {
+      if (headingRef.current) observer.unobserve(headingRef.current);
+      if (listRef.current) observer.unobserve(listRef.current);
+    };
+  }, []);
+
   return (
-    <section className="certifications-section py-5" id="Certifications">
-      <div className="container">
-        <div className="glass-container p-4 p-md-5">
-          <div className="d-flex align-items-center mb-5">
-            <h1 className="section-title mb-0">
-               Certifications <span className="title-glow">.</span>
-            </h1>
-            <div className="ms-3">
-              <i className="bi bi-patch-check nav-icon h4 mb-0"></i>
-            </div>
-          </div>
-          
-          <div className="row g-4">
-            {certifications.map((cert, index) => (
-              <div key={index} className="col-12 col-md-6 col-lg-4">
-                <div className="cert-card-premium glass-container p-4">
-                  <div className="d-flex align-items-start">
-                    <div className="cert-status-icon me-3">
-                      <i className="bi bi-patch-check-fill text-primary-glow h4"></i>
-                    </div>
-                    <div>
-                      <h5 className="cert-name mb-1">{cert.name}</h5>
-                      <p className="cert-issuer mb-1">{cert.issuer}</p>
-                      <span className="cert-date small">{cert.date}</span>
-                    </div>
-                  </div>
+    <section className="editorial-section" id="Certifications">
+      <div className="editorial-container">
+        <h2 className="section-heading reveal" ref={headingRef}>
+          CERTIFI&shy;CATIONS
+        </h2>
+
+        <div className="cert-list reveal" ref={listRef}>
+          <div className="separator"></div>
+          {certifications.map((cert, index) => (
+            <div key={index}>
+              <div className="cert-row">
+                <div className="cert-row-main">
+                  <span className="cert-bullet">•</span>
+                  <span className="cert-name-editorial">{cert.name.toUpperCase()}</span>
+                </div>
+                <div className="cert-row-meta">
+                  <span className="cert-issuer-tag">{cert.issuer}</span>
+                  <span className="cert-date-tag">{cert.date}</span>
                 </div>
               </div>
-            ))}
-          </div>
+              <div className="separator"></div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

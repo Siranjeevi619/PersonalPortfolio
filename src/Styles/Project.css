@@ -1,3 +1,163 @@
-.bg-project{
-    background-color: #53565A;
+/* =====================================================
+   PROJECTS SECTION — Black + PS Blue staggered list
+   ===================================================== */
+
+.project-list {
+  width: 100%;
+}
+
+.project-row-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project-row-link:hover {
+  opacity: 1;
+}
+
+.project-row {
+  padding: 1.8rem 0;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.project-row:hover {
+  padding-left: 1rem;
+}
+
+.project-row-main {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.project-bullet {
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--ps-blue);
+  flex-shrink: 0;
+}
+
+.project-name-editorial {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(1.2rem, 3.5vw, 2.2rem);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-white);
+  transition: color 0.3s ease;
+}
+
+.project-row:hover .project-name-editorial {
+  color: var(--ps-blue);
+}
+
+.project-row-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding-left: 2.8rem;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.project-row-meta.show {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 50px;
+}
+
+.project-role-tag {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ps-blue);
+  border: 1px solid rgba(0, 112, 209, 0.3);
+  padding: 4px 12px;
+  border-radius: 2px;
+  background: rgba(0, 112, 209, 0.08);
+}
+
+.project-arrow {
+  font-size: 1.1rem;
+  color: var(--ps-blue);
+  transition: transform 0.3s ease;
+}
+
+.project-row:hover .project-arrow {
+  transform: translate(3px, -3px);
+}
+
+.project-row-description {
+  padding-left: 2.8rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.project-row-description.show {
+  opacity: 1;
+  max-height: 450px;
+  margin-top: 1rem;
+}
+
+.project-bullets {
+  margin: 0 0 1rem 0;
+  padding-left: 1.2rem;
+  list-style-type: square;
+}
+
+.project-bullets li {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 800px;
+  margin-bottom: 0.5rem;
+}
+
+.project-tech-stack {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* ---- Reveal animation for list items ---- */
+
+.project-row.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease, padding 0.3s ease;
+}
+
+.project-row.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+  .project-row {
+    padding: 1.2rem 0;
+  }
+
+  .project-row:hover {
+    padding-left: 0.5rem;
+  }
+
+  .project-row-description.show {
+    max-height: 500px;
+  }
 }

@@ -1,53 +1,79 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../../Styles/Skill.css";
-import SkillCard from "./Helpers/SkillCard";
-import { Link } from "react-scroll";
 
-// Import all assets
-import JavaScriptLogo from "../../assets/Icons/icons8-javascript-480.png";
-import BootstrapLogo from "../../assets/Icons/icons8-bootstrap-480.png";
-import ReactLogo from "../../assets/Icons/ReactLogo.png";
-import JavaLogo from "../../assets/Icons/icons8-java-480.png";
-import PythonLogo from "../../assets/Icons/icons8-python-480.png";
-import MongoDBLogo from "../../assets/Icons/icons8-mongodb-480.png";
-import LinuxLogo from "../../assets/Icons/linux.png";
-
-const skillData = [
-  { name: "React JS", level: "Expert", imageSrc: ReactLogo, color: "#61DAFB" },
-  { name: "Node JS", level: "Advanced", imageSrc: "https://img.icons8.com/color/480/nodejs.png", color: "#68A063" },
-  { name: "Spring Boot", level: "Advanced", imageSrc: "https://img.icons8.com/color/480/spring-logo.png", color: "#6DB33F" },
-  { name: "JavaScript", level: "Expert", imageSrc: JavaScriptLogo, color: "#EFD81D" },
-  { name: "Tailwind CSS", level: "Advanced", imageSrc: "https://img.icons8.com/color/480/tailwindcss.png", color: "#06B6D4" },
-  { name: "AWS", level: "Intermediate", imageSrc: "https://img.icons8.com/color/480/amazon-web-services.png", color: "#FF9900" },
-  { name: "Mongo DB", level: "Advanced", imageSrc: MongoDBLogo, color: "#47A248" },
-  { name: "MySQL", level: "Advanced", imageSrc: "https://img.icons8.com/color/480/mysql-logo.png", color: "#4479A1" },
-  { name: "Docker", level: "Intermediate", imageSrc: "https://img.icons8.com/color/480/docker.png", color: "#2496ED" },
-  { name: "LangChain", level: "Intermediate", imageSrc: "https://img.icons8.com/color/480/chain.png", color: "#fff" },
-  { name: "Java", level: "Advanced", imageSrc: JavaLogo, color: "#007396" },
-  { name: "Python", level: "Advanced", imageSrc: PythonLogo, color: "#3776AB" },
-  { name: "Linux", level: "Advanced", imageSrc: LinuxLogo, color: "#FCC624" },
-  { name: "Bootstrap", level: "Expert", imageSrc: BootstrapLogo, color: "#7952B3" },
+const skillCategories = [
+  {
+    title: "Programming Languages",
+    skills: ["Java", "JavaScript (ES6+)", "Python", "C"],
+  },
+  {
+    title: "Frontend Development",
+    skills: ["React.js", "HTML5", "CSS3", "TailwindCSS", "Bootstrap", "Responsive Web Design", "Component-Based Architecture"],
+  },
+  {
+    title: "Backend Development",
+    skills: ["Spring Boot", "Node.js", "Express.js", "FastAPI", "RESTful API Design", "Microservices Architecture"],
+  },
+  {
+    title: "Cloud & DevOps",
+    skills: ["AWS (Lambda, API Gateway, DynamoDB, CloudWatch, IAM)", "Docker", "Jenkins", "CI/CD Pipelines", "Serverless Architecture"],
+  },
+  {
+    title: "Databases",
+    skills: ["MySQL", "MongoDB", "DynamoDB", "NoSQL", "SQL", "Database Schema Design"],
+  },
+  {
+    title: "AI & Machine Learning",
+    skills: ["LangChain", "Groq LLM", "Retrieval-Augmented Generation (RAG)", "Vector Embeddings", "Semantic Search", "Prompt Engineering"],
+  },
+  {
+    title: "Security & Tools",
+    skills: ["JWT Authentication", "Role-Based Access Control (RBAC)", "Git", "GitHub", "Linux", "Postman", "Insomnia", "Vercel", "Render"],
+  },
 ];
 
 function Skill() {
+  const headingRef = useRef(null);
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (headingRef.current) observer.observe(headingRef.current);
+    if (gridRef.current) observer.observe(gridRef.current);
+
+    return () => {
+      if (headingRef.current) observer.unobserve(headingRef.current);
+      if (gridRef.current) observer.unobserve(gridRef.current);
+    };
+  }, []);
+
   return (
-    <section className="skills-section py-5" id="Skills">
-      <div className="container">
-        <div className="glass-container p-4 p-md-5">
-          <div className="d-flex align-items-center mb-5">
-            <h1 className="section-title mb-0">
-              Technical Expertise <span className="title-glow">.</span>
-            </h1>
-            <Link to="Skills" className="ms-3">
-              <i className="bi bi-cpu nav-icon h4 mb-0"></i>
-            </Link>
-          </div>
-          
-          <div className="row g-4">
-            {skillData.map((skill, index) => (
-              <SkillCard key={index} {...skill} />
-            ))}
-          </div>
+    <section className="editorial-section" id="Skills">
+      <div className="editorial-container">
+        <h2 className="section-heading reveal" ref={headingRef}>
+          SKILLS
+        </h2>
+        <div className="skills-grid reveal" ref={gridRef}>
+          {skillCategories.map((cat, index) => (
+            <div key={index} className="skill-category">
+              <h3 className="skill-category-title">{cat.title}</h3>
+              <div className="skill-tags">
+                {cat.skills.map((skill, i) => (
+                  <span key={i} className="skill-tag">{skill}</span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

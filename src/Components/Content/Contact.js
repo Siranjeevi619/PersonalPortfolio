@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import emailjs from "emailjs-com";
 import toast, { Toaster } from "react-hot-toast";
-import "../../Styles/style.css";
 import "../../Styles/Contact.css";
-import ContactImage from "../../assets/Icons/undraw_join_re_w1lh.svg";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -12,13 +10,33 @@ function Contact() {
     message: "",
   });
   const [isSending, setIsSending] = useState(false);
+  const headingRef = useRef(null);
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (headingRef.current) observer.observe(headingRef.current);
+    if (formRef.current) observer.observe(formRef.current);
+
+    return () => {
+      if (headingRef.current) observer.unobserve(headingRef.current);
+      if (formRef.current) observer.unobserve(formRef.current);
+    };
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -35,115 +53,118 @@ function Contact() {
 
       toast.success("Message sent successfully!", {
         style: {
-          borderRadius: '16px',
-          background: 'rgba(255, 255, 255, 0.1)',
-          color: '#fff',
-          backdropFilter: 'blur(20px)',
-          border: '1px solid rgba(255, 255, 255, 0.1)'
+          background: "#1a1a1a",
+          color: "#ffffff",
+          fontFamily: "Inter, sans-serif",
+          fontWeight: "600",
+          letterSpacing: "0.03em",
         },
       });
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error("Failed to send email:", error);
-      toast.error("Failed to send message. Please try again.");
+      toast.error("Failed to send message. Please try again.", {
+        style: {
+          background: "#1a1a1a",
+          color: "#ffffff",
+          fontFamily: "Inter, sans-serif",
+        },
+      });
     } finally {
       setIsSending(false);
     }
   };
 
   return (
-    <section className="contact-section py-5" id="Contact">
-      <div className="container">
+    <section className="editorial-section contact-editorial" id="Contact">
+      <div className="editorial-container">
         <Toaster position="top-right" reverseOrder={false} />
-        <div className="glass-container p-4 p-md-5">
-          <div className="row align-items-center">
-            <div className="col-12 col-md-6 mb-5 mb-md-0">
-              <h1 className="section-title mb-4">
-                Let's Connect <span className="title-glow">.</span>
-              </h1>
-              <p className="contact-intro mb-5">
-                I'm currently <span className="highlight">available for freelance</span> opportunities 
-                and collaborative projects. Whether you have a question or just want to say hi, 
-                my inbox is always open.
-              </p>
-              
-              <div className="contact-info-glass glass-container p-4 mb-4">
-                <div className="d-flex align-items-center mb-3">
-                    <div className="info-icon me-3">
-                        <i className="bi bi-envelope"></i>
-                    </div>
-                    <div>
-                        <div className="info-label">Email Me</div>
-                        <div className="info-value">siranjeevi.pro@gmail.com</div>
-                    </div>
-                </div>
-                <div className="d-flex align-items-center">
-                    <div className="info-icon me-3">
-                        <i className="bi bi-geo-alt"></i>
-                    </div>
-                    <div>
-                        <div className="info-label">Location</div>
-                        <div className="info-value">Tamil Nadu, India</div>
-                    </div>
-                </div>
-              </div>
 
-              <div className="text-center d-none d-md-block">
-                <img src={ContactImage} alt="Contact Illustration" className="contact-img" />
+        <h2 className="section-heading reveal" ref={headingRef}>
+          CONTACT
+        </h2>
+
+        <div className="contact-grid reveal" ref={formRef}>
+          <div className="contact-info-area">
+            <p className="contact-intro">
+              I'm currently <span className="highlight">available for freelance</span> opportunities 
+              and collaborative projects. Whether you have a question or just want to say hi, 
+              my inbox is always open.
+            </p>
+
+            <div className="contact-details">
+              <div className="contact-detail-item">
+                <span className="contact-detail-label">EMAIL</span>
+                <a href="mailto:siranjeevi0619@gmail.com" className="contact-detail-value">
+                  siranjeevi0619@gmail.com
+                </a>
+              </div>
+              <div className="contact-detail-item">
+                <span className="contact-detail-label">PHONE</span>
+                <a href="tel:+916385908383" className="contact-detail-value">
+                  +91 63859 08383
+                </a>
+              </div>
+              <div className="contact-detail-item">
+                <span className="contact-detail-label">LEETCODE</span>
+                <a href="https://leetcode.com/Siranjeevi619" target="_blank" rel="noreferrer" className="contact-detail-value">
+                  leetcode.com/Siranjeevi619
+                </a>
+              </div>
+              <div className="contact-detail-item">
+                <span className="contact-detail-label">LOCATION</span>
+                <span className="contact-detail-value">Tamil Nadu, India</span>
               </div>
             </div>
+          </div>
 
-            <div className="col-12 col-md-6 ps-md-5">
-              <div className="glass-container contact-form-card p-4">
-                <h3 className="mb-4 fw-bold">Send a Message</h3>
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-4">
-                    <label className="custom-label">Full Name</label>
-                    <input
-                      type="text"
-                      className="glass-input"
-                      placeholder="Enter your name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label className="custom-label">Email Address</label>
-                    <input
-                      type="email"
-                      className="glass-input"
-                      placeholder="name@example.com"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label className="custom-label">Message</label>
-                    <textarea
-                      className="glass-input"
-                      placeholder="How can I help you?"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows="4"
-                      required
-                    ></textarea>
-                  </div>
-                  <button 
-                    type="submit" 
-                    className="premium-button w-100 py-3"
-                    disabled={isSending}
-                  >
-                    {isSending ? "Sending..." : "Send Message"} 
-                    <i className="bi bi-send ms-2"></i>
-                  </button>
-                </form>
+          <div className="contact-form-area">
+            <form onSubmit={handleSubmit}>
+              <div className="editorial-field">
+                <label className="editorial-label">Full Name</label>
+                <input
+                  type="text"
+                  className="editorial-input"
+                  placeholder="Your name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
               </div>
-            </div>
+              <div className="editorial-field">
+                <label className="editorial-label">Email Address</label>
+                <input
+                  type="email"
+                  className="editorial-input"
+                  placeholder="name@example.com"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="editorial-field">
+                <label className="editorial-label">Message</label>
+                <textarea
+                  className="editorial-input editorial-textarea"
+                  placeholder="How can I help you?"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="editorial-btn editorial-submit-btn"
+                disabled={isSending}
+              >
+                {isSending ? "SENDING..." : "SEND MESSAGE"}
+                <i className="bi bi-arrow-up-right"></i>
+              </button>
+            </form>
           </div>
         </div>
       </div>
