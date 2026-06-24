@@ -14,15 +14,18 @@ function About() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
-    if (headingRef.current) observer.observe(headingRef.current);
-    if (contentRef.current) observer.observe(contentRef.current);
+    const headingElement = headingRef.current;
+    const contentElement = contentRef.current;
+
+    if (headingElement) observer.observe(headingElement);
+    if (contentElement) observer.observe(contentElement);
 
     return () => {
-      if (headingRef.current) observer.unobserve(headingRef.current);
-      if (contentRef.current) observer.unobserve(contentRef.current);
+      if (headingElement) observer.unobserve(headingElement);
+      if (contentElement) observer.unobserve(contentElement);
     };
   }, []);
 
@@ -36,7 +39,14 @@ function About() {
         <div className="about-content reveal" ref={contentRef}>
           <div className="about-bio-area">
             <p className="about-bio">
-              I am a <span className="highlight">Full Stack Developer</span> specializing in the MERN stack, Spring Boot, and AI integrations (RAG, LangChain). Experienced in building scalable web applications, microservices, and RESTful APIs using AWS, Docker, and CI/CD pipelines. As a strong algorithmic problem-solver with <span className="highlight">600+ LeetCode DSA</span> solved, I am dedicated to delivering secure, high-performance, and user-centric software solutions.
+              I am a <span className="highlight">Full Stack Developer</span>{" "}
+              specializing in the MERN stack, Spring Boot, and AI integrations
+              (RAG, LangChain). Experienced in building scalable web
+              applications, microservices, and RESTful APIs using AWS, Docker,
+              and CI/CD pipelines. As a strong algorithmic problem-solver with{" "}
+              <span className="highlight">600+ LeetCode DSA</span> solved, I am
+              dedicated to delivering secure, high-performance, and user-centric
+              software solutions.
             </p>
           </div>
 
@@ -53,10 +63,22 @@ function About() {
                   Frontend Developer Intern · Remote
                 </p>
                 <ul className="about-item-bullets">
-                  <li>Improved UI scalability and reduced redundant codebase by developing 12+ reusable React components for LMS modules.</li>
-                  <li>Enabled dynamic content rendering by integrating 20+ RESTful API endpoints and managing asynchronous data flows.</li>
-                  <li>Optimized performance through code-splitting, memoization, and streamlined state updates to enhance responsiveness.</li>
-                  <li>Collaborated seamlessly with backend teams via Agile practices to define API contracts and review PRs.</li>
+                  <li>
+                    Improved UI scalability and reduced redundant codebase by
+                    developing 12+ reusable React components for LMS modules.
+                  </li>
+                  <li>
+                    Enabled dynamic content rendering by integrating 20+ RESTful
+                    API endpoints and managing asynchronous data flows.
+                  </li>
+                  <li>
+                    Optimized performance through code-splitting, memoization,
+                    and streamlined state updates to enhance responsiveness.
+                  </li>
+                  <li>
+                    Collaborated seamlessly with backend teams via Agile
+                    practices to define API contracts and review PRs.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -66,18 +88,26 @@ function About() {
               <h3 className="about-block-title">EDUCATION</h3>
               <div className="about-item">
                 <div className="about-item-header">
-                  <span className="about-item-name">Karpagam College of Engineering</span>
+                  <span className="about-item-name">
+                    Karpagam College of Engineering
+                  </span>
                   <span className="about-item-date">7.6 CGPA</span>
                 </div>
-                <p className="about-item-desc">B.Tech in Information Technology</p>
-                <p className="about-item-details">Coimbatore · Aug 2022 – May 2026</p>
+                <p className="about-item-desc">
+                  B.Tech in Information Technology
+                </p>
+                <p className="about-item-details">
+                  Coimbatore · Aug 2022 – May 2026
+                </p>
               </div>
               <div className="about-item">
                 <div className="about-item-header">
                   <span className="about-item-name">SD Eaden Matric HSS</span>
                   <span className="about-item-date">85%</span>
                 </div>
-                <p className="about-item-desc">Higher Secondary Certificate (HSC)</p>
+                <p className="about-item-desc">
+                  Higher Secondary Certificate (HSC)
+                </p>
                 <p className="about-item-details">Vadalur · 2022</p>
               </div>
             </div>
@@ -90,19 +120,25 @@ function About() {
                   <span className="about-item-name">Best Project Award</span>
                   <span className="about-item-date">2026</span>
                 </div>
-                <p className="about-item-desc">Karpagam College of Engineering</p>
+                <p className="about-item-desc">
+                  Karpagam College of Engineering
+                </p>
                 <p className="about-item-details">
-                  Recognized for innovation, technical depth, and real-world applicability among final-year IT graduates.
+                  Recognized for innovation, technical depth, and real-world
+                  applicability among final-year IT graduates.
                 </p>
               </div>
               <div className="about-item">
                 <div className="about-item-header">
-                  <span className="about-item-name">Algorithmic Proficiency</span>
+                  <span className="about-item-name">
+                    Algorithmic Proficiency
+                  </span>
                   <span className="about-item-date">600+ Solved</span>
                 </div>
                 <p className="about-item-desc">LeetCode DSA Profile</p>
                 <p className="about-item-details">
-                  Demonstrated strong problem decomposition and algorithmic thinking by solving 600+ DSA problems.
+                  Demonstrated strong problem decomposition and algorithmic
+                  thinking by solving 600+ DSA problems.
                 </p>
               </div>
             </div>

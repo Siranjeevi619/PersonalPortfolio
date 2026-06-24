@@ -2,11 +2,31 @@ import React, { useEffect, useRef } from "react";
 import "../../Styles/Certification.css";
 
 const certifications = [
-  { name: "Wipro Java Full Stack Certification", issuer: "Wipro TalentNext", date: "Nov 2025" },
-  { name: "AWS Cloud Practitioner Essentials", issuer: "Amazon Web Services", date: "Nov 2025" },
-  { name: "Developing Back-End Apps with Node.js and Express", issuer: "IBM / Coursera", date: "Jun 2025" },
-  { name: "Advanced React & React", issuer: "Meta / Coursera", date: "Jan 2025, Aug 2024" },
-  { name: "Introduction to MongoDB", issuer: "MongoDB University", date: "Aug 2024" },
+  {
+    name: "Wipro Java Full Stack Certification",
+    issuer: "Wipro TalentNext",
+    date: "Nov 2025",
+  },
+  {
+    name: "AWS Cloud Practitioner Essentials",
+    issuer: "Amazon Web Services",
+    date: "Nov 2025",
+  },
+  {
+    name: "Developing Back-End Apps with Node.js and Express",
+    issuer: "IBM / Coursera",
+    date: "Jun 2025",
+  },
+  {
+    name: "Advanced React & React",
+    issuer: "Meta / Coursera",
+    date: "Jan 2025, Aug 2024",
+  },
+  {
+    name: "Introduction to MongoDB",
+    issuer: "MongoDB University",
+    date: "Aug 2024",
+  },
 ];
 
 const Certifications = () => {
@@ -22,15 +42,18 @@ const Certifications = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
-    if (headingRef.current) observer.observe(headingRef.current);
-    if (listRef.current) observer.observe(listRef.current);
+    const headingElement = headingRef.current;
+    const listElement = listRef.current;
+
+    if (headingElement) observer.observe(headingElement);
+    if (listElement) observer.observe(listElement);
 
     return () => {
-      if (headingRef.current) observer.unobserve(headingRef.current);
-      if (listRef.current) observer.unobserve(listRef.current);
+      if (headingElement) observer.unobserve(headingElement);
+      if (listElement) observer.unobserve(listElement);
     };
   }, []);
 
@@ -48,7 +71,9 @@ const Certifications = () => {
               <div className="cert-row">
                 <div className="cert-row-main">
                   <span className="cert-bullet">•</span>
-                  <span className="cert-name-editorial">{cert.name.toUpperCase()}</span>
+                  <span className="cert-name-editorial">
+                    {cert.name.toUpperCase()}
+                  </span>
                 </div>
                 <div className="cert-row-meta">
                   <span className="cert-issuer-tag">{cert.issuer}</span>
